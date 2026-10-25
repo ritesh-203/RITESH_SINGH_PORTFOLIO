@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Ritesh Singh &mdash; Upcoming Developer | Portfolio</title>
+  <meta name="title" content="Ritesh Singh &mdash; Upcoming Developer | Portfolio" />
+  <meta name="description" content="Portfolio of Ritesh Singh, B.Tech student at GL Bajaj Institute of Technology and Management and aspiring developer passionate about building creative, user-friendly, and impactful digital experiences." />
+  <meta name="author" content="Ritesh Singh" />
+  <meta name="keywords" content="Ritesh Singh, Upcoming Developer, B.Tech, GL Bajaj, GLBITM, Web Developer, C++, DSA, Tailwind CSS, JavaScript, Portfolio" />
+  
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ritesh-203.github.io/" />
+  <meta property="og:title" content="Ritesh Singh &mdash; Upcoming Developer" />
+  <meta property="og:description" content="B.Tech student @ GL Bajaj & aspiring software developer building creative and impactful digital experiences." />
+  <meta property="og:image" content="assets/avatar.svg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+            },
+            accent: {
+              purple: '#8b5cf6',
+              violet: '#7c3aed',
+              cyan: '#06b6d4'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Structured Data JSON-LD for Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ritesh Singh",
+    "jobTitle": "Upcoming Developer",
+    "url": "https://ritesh-203.github.io/",
+    "sameAs": [
+      "https://github.com/ritesh-203",
+      "https://www.linkedin.com/in/ritesh-singh-396528345"
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "GL Bajaj Institute of Technology and Management"
+    },
+    "knowsAbout": ["C++", "Data Structures & Algorithms", "JavaScript", "Tailwind CSS", "Web Development", "Artificial Intelligence"]
+  }
+  </script>
+</head>
+<body class="bg-base text-main min-h-screen relative overflow-x-hidden selection:bg-brand-500/20 selection:text-brand-400">
+
+  <!-- Interactive Dynamic Background Canvas (Constellation & Particle Mesh) -->
+  <canvas id="bg-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+
+  <!-- Interactive Cursor Spotlight Glow -->
+  <div id="cursor-spotlight"></div>
+
+  <!-- Ambient Light Accents -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+  <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0 opacity-60"></div>
+
+  <!-- ============================================================
+       NAVIGATION BAR
+       ============================================================ -->
+  <header class="fixed top-0 left-0 w-full z-50 glass-panel border-b border-white/5 transition-all duration-300" id="main-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      
+      <!-- Brand Monogram & Name -->
+      <a href="#hero" class="flex items-center gap-3 group focus:outline-none">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-accent-purple to-pink-500 p-0.5 shadow-lg shadow-brand-500/20 group-hover:shadow-brand-500/40 transition-all">
+          <div class="w-full h-full bg-[#0b0f17] rounded-[10px] flex items-center justify-center font-mono font-bold text-base text-brand-400 group-hover:scale-105 transition-transform">
+            RS
+          </div>
+        </div>
+        <div>
+          <span class="font-bold text-base sm:text-lg tracking-tight group-hover:text-brand-400 transition-colors">Ritesh Singh</span>
+          <span class="block text-[11px] font-mono text-muted tracking-wider uppercase">Upcoming Dev</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Items -->
+      <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+        <a href="#about" class="px-3 py-2 text-sm font-medium text-muted hover:text-brand-400 hover:bg-white/5 rounded-lg transition-all">About</a>
+        <a href="#skills" class="px-3 py-2 text-sm font-medium text-muted hover:text-brand-400 hover:bg-white/5 rounded-lg transition-all">Skills</a>
+        <a href="#certificates" class="px-3 py-2 text-sm font-medium text-muted hover:text-brand-400 hover:bg-white/5 rounded-lg transition-all">Certificates</a>
+        <a href="#education" class="px-3 py-2 text-sm font-medium text-muted hover:text-brand-400 hover:bg-white/5 rounded-lg transition-all">Education</a>
+        <a href="#contact" class="px-3 py-2 text-sm font-medium text-muted hover:text-brand-400 hover:bg-white/5 rounded-lg transition-all">Contact</a>
+      </nav>
+
+      <!-- Right Header Actions (Command Palette, Theme Toggle, CTA) -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        
+        <!-- Command Palette Trigger Button -->
+        <button id="cmd-palette-btn" aria-label="Open command palette" class="hidden sm:flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs font-mono text-muted bg-white/5 hover:bg-white/10 border border-white/10 hover:border-brand-400/40 transition-all cursor-pointer">
+          <i data-lucide="search" class="w-3.5 h-3.5 text-brand-400"></i>
+          <span>Search</span>
+          <kbd class="px-1.5 py-0.5 text-[10px] bg-black/30 rounded border border-white/10">Ctrl K</kbd>
+        </button>
+
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" aria-label="Toggle dark/light theme" class="p-2 sm:p-2.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-muted hover:text-brand-400 transition-all cursor-pointer">
+          <i data-lucide="moon" id="theme-icon-dark" class="w-4 h-4 hidden"></i>
+          <i data-lucide="sun" id="theme-icon-light" class="w-4 h-4"></i>
+        </button>
+
+        <!-- Quick Connect CTA -->
+        <a href="#contact" class="hidden lg:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg bg-gradient-to-r from-brand-600 to-accent-purple text-white hover:opacity-95 shadow-md shadow-brand-500/20 hover:shadow-brand-500/40 hover:-translate-y-0.5 transition-all">
+          <span>Let's Talk</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" aria-label="Toggle mobile menu" class="md:hidden p-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-muted hover:text-brand-400 transition-all">
+          <i data-lucide="menu" id="menu-icon-open" class="w-5 h-5"></i>
+          <i data-lucide="x" id="menu-icon-close" class="w-5 h-5 hidden"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-3 pb-6 border-t border-white/5 glass-panel bg-base/95 space-y-2">
+      <a href="#about" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-brand-400 hover:bg-white/5">About Me</a>
+      <a href="#skills" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-brand-400 hover:bg-white/5">Skills &amp; Technologies</a>
+      <a href="#certificates" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-brand-400 hover:bg-white/5">Certificates &amp; Credentials</a>
+      <a href="#education" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-brand-400 hover:bg-white/5">Education &amp; Journey</a>
+      <a href="#contact" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-sm font-medium text-muted hover:text-brand-400 hover:bg-white/5">Contact Me</a>
+      
+      <div class="pt-3 border-t border-white/10 flex items-center justify-between">
+        <button id="mobile-cmd-btn" class="flex items-center gap-2 px-3 py-2 text-xs font-mono text-muted bg-white/5 rounded-lg border border-white/10">
+          <i data-lucide="search" class="w-3.5 h-3.5 text-brand-400"></i> Command Search
+        </button>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/ritesh-203" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-white/5 text-muted hover:text-brand-400">
+            <i data-lucide="github" class="w-4 h-4"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/ritesh-singh-396528345" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-white/5 text-muted hover:text-brand-400">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="relative z-10 pt-20 sm:pt-24 space-y-24 sm:space-y-32">
+
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section id="hero" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-16 pb-12 sm:pb-20">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        
+        <!-- Hero Text & CTAs (Left Column - 7 Cols) -->
+        <div class="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
+          
+          <!-- Availability Badge -->
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-brand-400/10 border border-brand-400/20 text-xs font-mono text-brand-400">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 status-beacon inline-block"></span>
+            <span>Fresher • Open to Internships &amp; Roles</span>
+          </div>
+
+          <!-- Main Headline with Dynamic Typewriter -->
+          <div class="space-y-3">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15]">
+              Hi, I'm <span class="gradient-text">Ritesh Singh</span>
+              <span class="block text-2xl sm:text-3xl lg:text-4xl font-semibold mt-2 text-main/90 font-mono">
+                &mdash; <span id="typing-text" class="gradient-text">Upcoming Developer</span><span class="typing-cursor">|</span>
+              </span>
+            </h1>
+            <p class="text-xs sm:text-sm font-mono text-brand-400 tracking-wide uppercase flex items-center justify-center lg:justify-start gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent-purple animate-ping"></span>
+              <span>B.Tech Computer Science Student @ GL Bajaj (GLBITM)</span>
+            </p>
+          </div>
+
+          <!-- Engaging Short Bio -->
+          <p class="text-base sm:text-lg text-muted max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            A B.Tech student and aspiring developer passionate about building creative, user-friendly, and impactful digital experiences. Currently developing my skills in programming, web development, and software development, while exploring new technologies and turning ideas into real-world projects.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="hero-buttons flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <!-- View Certificates CTA -->
+            <a href="#certificates" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-brand-600 via-brand-500 to-accent-purple text-white shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all group">
+              <span>View Certificates</span>
+              <i data-lucide="award" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+            </a>
+
+            <!-- Contact CTA -->
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-white/5 hover:bg-white/10 border border-white/15 hover:border-brand-400/50 text-main hover:-translate-y-0.5 active:translate-y-0 transition-all">
+              <i data-lucide="mail" class="w-4 h-4 text-brand-400"></i>
+              <span>Contact Me</span>
+            </a>
+
+            <!-- Copy Email Quick Action -->
+            <button id="hero-copy-email" class="inline-flex items-center justify-center gap-2 px-4 py-3.5 rounded-xl text-xs font-mono bg-black/20 hover:bg-white/5 border border-white/10 text-muted hover:text-brand-400 transition-all cursor-pointer" title="Copy email address">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy Email</span>
+            </button>
+          </div>
+
+          <!-- Social Links & Verification Pills -->
+          <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-sm text-muted">
+            <span class="text-xs font-mono uppercase tracking-wider text-dim">Connect:</span>
+            
+            <a href="https://github.com/ritesh-203" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs hover:text-brand-400 transition-colors">
+              <i data-lucide="github" class="w-3.5 h-3.5"></i>
+              <span>ritesh-203</span>
+              <i data-lucide="external-link" class="w-3 h-3 opacity-60"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/ritesh-singh-396528345?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs hover:text-brand-400 transition-colors">
+              <i data-lucide="linkedin" class="w-3.5 h-3.5 text-[#0077b5]"></i>
+              <span>LinkedIn Profile</span>
+              <i data-lucide="external-link" class="w-3 h-3 opacity-60"></i>
+            </a>
+
+            <a href="mailto:rriteshsingh1601@gmail.com" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-xs hover:text-brand-400 transition-colors">
+              <i data-lucide="at-sign" class="w-3.5 h-3.5 text-rose-400"></i>
+              <span>rriteshsingh1601@gmail.com</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Hero Visual Element & Mini Terminal (Right Column - 5 Cols) -->
+        <div class="lg:col-span-5 flex flex-col items-center justify-center relative">
+          
+          <!-- Outer Neon Halo -->
+          <div class="relative w-full max-w-sm sm:max-w-md mx-auto">
+            
+            <!-- Graphic Avatar Frame -->
+            <div class="relative mx-auto w-64 h-64 sm:w-72 sm:h-72 rounded-3xl p-1 bg-gradient-to-tr from-brand-500 via-accent-purple to-pink-500 shadow-2xl shadow-brand-500/20 animate-float">
+              <div class="w-full h-full bg-[#080d16] rounded-[22px] overflow-hidden relative flex items-center justify-center p-3">
+                <img src="assets/avatar.svg" alt="Ritesh Singh - Developer Portrait" class="w-full h-full object-contain" />
+              </div>
+
+              <!-- Quick Floating Tech Badges with Dynamic Floating Physics -->
+              <div class="absolute -bottom-3 -left-3 px-3 py-1.5 rounded-xl bg-[#0b1120] border border-brand-400/30 text-xs font-mono font-medium text-brand-400 shadow-lg flex items-center gap-1.5 animate-float-drift">
+                <i data-lucide="cpu" class="w-3.5 h-3.5 text-accent-cyan"></i>
+                <span>C++ &amp; DSA</span>
+              </div>
+              <div class="absolute -top-3 -right-3 px-3 py-1.5 rounded-xl bg-[#0b1120] border border-accent-purple/30 text-xs font-mono font-medium text-purple-300 shadow-lg flex items-center gap-1.5 animate-float-reverse">
+                <i data-lucide="award" class="w-3.5 h-3.5 text-accent-purple"></i>
+                <span>IBM AI Certified</span>
+              </div>
+              <div class="absolute top-1/2 -left-8 px-2.5 py-1 rounded-lg bg-black/80 border border-white/10 text-[10px] font-mono text-emerald-400 shadow-xl hidden sm:flex items-center gap-1 animate-float">
+                <span>● GL Bajaj</span>
+              </div>
+            </div>
+
+            <!-- Interactive Mini Terminal Snippet -->
+            <div class="mt-8 terminal-window rounded-xl overflow-hidden border border-white/10">
+              <!-- Window Bar -->
+              <div class="px-4 py-2.5 bg-black/40 border-b border-white/10 flex items-center justify-between">
+                <div class="flex items-center gap-1.5">
+                  <div class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></div>
+                </div>
+                <span class="text-[11px] font-mono text-muted">guest@ritesh-singh:~$</span>
+                <span class="text-[10px] font-mono text-brand-400">zsh</span>
+              </div>
+              <!-- Terminal Body -->
+              <div class="p-4 font-mono text-xs space-y-2 bg-[#060911]/90">
+                <p class="text-muted"><span class="text-emerald-400">➜</span> <span class="text-brand-400">ritesh</span> --status</p>
+                <p class="text-slate-300 pl-4">"Seeking opportunities to learn, build &amp; create value."</p>
+                <p class="text-muted"><span class="text-emerald-400">➜</span> <span class="text-brand-400">ritesh</span> --stack</p>
+                <p class="text-accent-cyan pl-4">[ "C++", "DSA", "Tailwind CSS", "JavaScript", "AI" ]</p>
+                <div class="flex items-center gap-1 text-muted pl-4 pt-1">
+                  <span class="text-emerald-400">➜</span>
+                  <span class="text-slate-200">ready_to_hire</span>
+                  <span class="terminal-cursor"></span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="mt-14 sm:mt-20 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+        <div class="glass-card p-4 rounded-xl text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold font-mono text-brand-400" data-counter="7.00">7.00</div>
+          <div class="text-xs text-muted font-medium mt-1">1st Year YGPA</div>
+          <div class="text-[10px] text-dim font-mono">B.Tech @ GL Bajaj</div>
+        </div>
+
+        <div class="glass-card p-4 rounded-xl text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold font-mono text-accent-purple" data-counter="84.34">84.34%</div>
+          <div class="text-xs text-muted font-medium mt-1">Class X Score</div>
+          <div class="text-[10px] text-dim font-mono">Academic Distinction</div>
+        </div>
+
+        <div class="glass-card p-4 rounded-xl text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold font-mono text-emerald-400" data-counter="73.2">73.20%</div>
+          <div class="text-xs text-muted font-medium mt-1">Class XII Science</div>
+          <div class="text-[10px] text-dim font-mono">PCM Foundation</div>
+        </div>
+
+        <div class="glass-card p-4 rounded-xl text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold font-mono text-amber-400" data-counter="150">150+</div>
+          <div class="text-xs text-muted font-medium mt-1">Coding Problems</div>
+          <div class="text-[10px] text-dim font-mono">C++ &amp; DSA Practice</div>
+        </div>
+
+        <div class="glass-card p-4 rounded-xl text-center col-span-2 sm:col-span-1">
+          <div class="text-2xl sm:text-3xl font-extrabold font-mono text-sky-400" data-counter="3">3</div>
+          <div class="text-xs text-muted font-medium mt-1">Verified Certificates</div>
+          <div class="text-[10px] text-dim font-mono">IBM &amp; Edunet Foundation</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT ME SECTION & INTERACTIVE TERMINAL
+         ============================================================ -->
+    <section id="about" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-400/10 border border-brand-400/20 text-xs font-mono text-brand-400 uppercase tracking-widest">
+          <i data-lucide="user" class="w-3.5 h-3.5"></i>
+          <span>About Me</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          Curiosity Driven, <span class="gradient-text">Engineering Minded</span>
+        </h2>
+        <p class="text-muted text-sm sm:text-base">
+          A glimpse into my background, my passion for computing, and what I bring to teams.
+        </p>
+      </div>
+
+      <!-- About Grid -->
+      <div class="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Detailed Story (Left Column - 7 Cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="glass-card p-6 sm:p-8 rounded-2xl space-y-4">
+            <h3 class="text-xl font-bold flex items-center gap-2.5">
+              <i data-lucide="sparkles" class="w-5 h-5 text-brand-400"></i>
+              <span>My Journey &amp; Ambitions</span>
+            </h3>
+            
+            <p class="text-muted text-sm sm:text-base leading-relaxed">
+              I am currently pursuing my <strong>Bachelor of Technology (B.Tech)</strong> in engineering at <strong>GL Bajaj Institute of Technology and Management (GLBITM)</strong>. Having wrapped up my first year with a solid <strong>7.00 YGPA</strong>, I have channeled my energy into mastering core software foundations, algorithmic problem solving in C++, and modern web architecture.
+            </p>
+            
+            <p class="text-muted text-sm sm:text-base leading-relaxed">
+              My coding journey started with learning how things work under the hood in <strong>C and C++</strong>, where I developed an appreciation for memory, data structures, and algorithms. From there, I expanded into <strong>front-end web development</strong>&mdash;combining responsive HTML, Tailwind CSS, and JavaScript to build tools that solve genuine problems.
+            </p>
+
+            <p class="text-muted text-sm sm:text-base leading-relaxed">
+              As a <strong>fresher</strong>, what sets me apart is my intense work ethic, hunger for feedback, and genuine passion for writing clean, readable code. I'm excited to collaborate with mentors and engineering teams where I can contribute, learn quickly, and create real impact.
+            </p>
+
+            <!-- Key Strengths Grid -->
+            <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+              <div class="p-3 rounded-xl bg-white/5 border border-white/5 flex items-start gap-3">
+                <div class="p-2 rounded-lg bg-brand-400/10 text-brand-400">
+                  <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-main">Solid Foundation</h4>
+                  <p class="text-muted mt-0.5">84.34% Class X, 73.2% Class XII, and disciplined engineering fundamentals.</p>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-white/5 border border-white/5 flex items-start gap-3">
+                <div class="p-2 rounded-lg bg-accent-purple/10 text-purple-400">
+                  <i data-lucide="code" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-main">C++ &amp; DSA Focus</h4>
+                  <p class="text-muted mt-0.5">Practicing algorithmic problem solving, time complexity, and data structures.</p>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-white/5 border border-white/5 flex items-start gap-3">
+                <div class="p-2 rounded-lg bg-emerald-400/10 text-emerald-400">
+                  <i data-lucide="layout" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-main">Modern Web Aesthetics</h4>
+                  <p class="text-muted mt-0.5">Obsessed with responsive UI, Tailwind CSS, accessibility, and clean typography.</p>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-xl bg-white/5 border border-white/5 flex items-start gap-3">
+                <div class="p-2 rounded-lg bg-amber-400/10 text-amber-400">
+                  <i data-lucide="zap" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-main">Adaptable &amp; Fast Learner</h4>
+                  <p class="text-muted mt-0.5">Quick to pick up new frameworks, libraries, and best development practices.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Info Cards -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+            <div class="p-3 rounded-xl glass-card">
+              <span class="block text-dim text-[11px] font-mono">Degree</span>
+              <span class="font-semibold text-xs sm:text-sm text-main">B.Tech</span>
+            </div>
+            <div class="p-3 rounded-xl glass-card">
+              <span class="block text-dim text-[11px] font-mono">College</span>
+              <span class="font-semibold text-xs sm:text-sm text-main">GL Bajaj, Gr. Noida</span>
+            </div>
+            <div class="p-3 rounded-xl glass-card">
+              <span class="block text-dim text-[11px] font-mono">Location</span>
+              <span class="font-semibold text-xs sm:text-sm text-main">Delhi NCR, IN</span>
+            </div>
+            <div class="p-3 rounded-xl glass-card">
+              <span class="block text-dim text-[11px] font-mono">Experience</span>
+              <span class="font-semibold text-xs sm:text-sm text-brand-400">Fresher</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Terminal Simulator (Right Column - 5 Cols) -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="terminal-window rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+            <!-- Terminal Header -->
+            <div class="px-4 py-3 bg-black/60 border-b border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-rose-500"></div>
+                <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                <span class="ml-2 font-mono text-xs text-muted">terminal.ritesh.sh</span>
+              </div>
+              <span class="text-[10px] font-mono text-dim">Interactive CLI</span>
+            </div>
+
+            <!-- Terminal Output Box -->
+            <div id="terminal-history" class="p-4 h-64 overflow-y-auto font-mono text-xs space-y-2 bg-[#060911]">
+              <div class="text-brand-400">
+                Welcome to Ritesh Singh's Interactive Terminal! v1.0.0
+              </div>
+              <div class="text-muted">
+                Type <span class="text-emerald-400 font-bold">help</span> to list available commands.
+              </div>
+            </div>
+
+            <!-- Terminal Input Form -->
+            <form id="terminal-form" class="p-3 bg-black/50 border-t border-white/10 flex items-center gap-2">
+              <span class="text-emerald-400 font-mono text-xs font-bold">ritesh@cli:~$</span>
+              <input 
+                type="text" 
+                id="terminal-input" 
+                class="flex-1 bg-transparent font-mono text-xs text-slate-100 placeholder:text-slate-600 focus:outline-none" 
+                placeholder="type 'whoami', 'certificates', 'skills', 'help'..."
+                autocomplete="off"
+                spellcheck="false"
+              />
+              <button type="submit" class="text-xs px-2.5 py-1 rounded bg-brand-500/20 text-brand-400 hover:bg-brand-500/30 font-mono">
+                Run
+              </button>
+            </form>
+
+            <!-- Quick Command Shortcut Chips -->
+            <div class="px-3 py-2 bg-black/80 border-t border-white/5 flex flex-wrap gap-1.5 text-[10px] font-mono">
+              <span class="text-dim self-center">Try:</span>
+              <button type="button" class="term-chip px-2 py-0.5 rounded bg-white/5 hover:bg-white/10 text-slate-300 hover:text-brand-400 border border-white/10">whoami</button>
+              <button type="button" class="term-chip px-2 py-0.5 rounded bg-white/5 hover:bg-white/10 text-slate-300 hover:text-brand-400 border border-white/10">certificates</button>
+              <button type="button" class="term-chip px-2 py-0.5 rounded bg-white/5 hover:bg-white/10 text-slate-300 hover:text-brand-400 border border-white/10">skills</button>
+              <button type="button" class="term-chip px-2 py-0.5 rounded bg-white/5 hover:bg-white/10 text-slate-300 hover:text-brand-400 border border-white/10">education</button>
+              <button type="button" class="term-chip px-2 py-0.5 rounded bg-white/5 hover:bg-white/10 text-slate-300 hover:text-brand-400 border border-white/10">clear</button>
+            </div>
+          </div>
+
+          <!-- Developer Philosophy Card -->
+          <div class="p-5 rounded-2xl glass-card space-y-2 border border-white/10">
+            <div class="flex items-center gap-2 text-xs font-mono text-accent-purple font-semibold">
+              <i data-lucide="terminal" class="w-4 h-4"></i>
+              <span>DEVELOPER PHILOSOPHY</span>
+            </div>
+            <p class="text-xs text-muted leading-relaxed">
+              "Great software begins with solid fundamentals and empathy for the end-user. I believe in writing readable code, understanding the algorithms behind the frameworks, and embracing every bug as a learning opportunity."
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SKILLS & TECHNOLOGIES SECTION
+         ============================================================ -->
+    <section id="skills" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-400/10 border border-brand-400/20 text-xs font-mono text-brand-400 uppercase tracking-widest">
+          <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+          <span>Core Competencies</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          Skills &amp; <span class="gradient-text">Technologies</span>
+        </h2>
+        <p class="text-muted text-sm sm:text-base">
+          Focused technical competencies across core programming, data structures, modern web technologies, and artificial intelligence.
+        </p>
+      </div>
+
+      <!-- Skills Category Tabs -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-2" id="skill-filter-buttons">
+        <button data-category="all" class="skill-tab-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-brand-500 text-white shadow-md shadow-brand-500/20">
+          All Skills (7)
+        </button>
+        <button data-category="languages" class="skill-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white/5 hover:bg-white/10 text-muted hover:text-main border border-white/10">
+          Languages (C, C++, JS, Python)
+        </button>
+        <button data-category="web" class="skill-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white/5 hover:bg-white/10 text-muted hover:text-main border border-white/10">
+          Web (HTML &amp; CSS, JS)
+        </button>
+        <button data-category="dsa" class="skill-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white/5 hover:bg-white/10 text-muted hover:text-main border border-white/10">
+          DSA &amp; AI
+        </button>
+      </div>
+
+      <!-- Skills Cards Grid Container (Rendered dynamically via app.js) -->
+      <div id="skills-grid" class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+      </div>
+
+      <!-- Learning Roadmap Banner -->
+      <div class="mt-10 p-6 rounded-2xl glass-card border border-brand-400/20 bg-gradient-to-r from-brand-900/10 via-accent-purple/10 to-transparent flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-4 text-center md:text-left">
+          <div class="p-3 rounded-xl bg-brand-400/10 text-brand-400 hidden sm:block">
+            <i data-lucide="compass" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-sm sm:text-base text-main">Continuous Learning Roadmap</h4>
+            <p class="text-xs sm:text-sm text-muted">Currently diving deeper into Advanced Data Structures in C++, Full-Stack React.js, and Artificial Intelligence concepts.</p>
+          </div>
+        </div>
+        <a href="https://github.com/ritesh-203" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-white/5 hover:bg-white/10 border border-white/10 text-brand-400 whitespace-nowrap">
+          <span>Follow on GitHub</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CERTIFICATES & CREDENTIALS SECTION
+         ============================================================ -->
+    <section id="certificates" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-400/10 border border-brand-400/20 text-xs font-mono text-brand-400 uppercase tracking-widest">
+          <i data-lucide="award" class="w-3.5 h-3.5"></i>
+          <span>Verified Accreditations</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          Certifications &amp; <span class="gradient-text">Credentials</span>
+        </h2>
+        <p class="text-muted text-sm sm:text-base">
+          Official industry certifications and hands-on laboratory completions issued by Vodafone Idea Foundation, Edunet Foundation, and IBM SkillsBuild.
+        </p>
+      </div>
+
+      <!-- Certificate Filter Pills -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-2" id="cert-filter-buttons">
+        <button data-filter="all" class="cert-tab-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-brand-500 text-white shadow-md shadow-brand-500/20">
+          All Credentials (3)
+        </button>
+        <button data-filter="web" class="cert-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white/5 hover:bg-white/10 text-muted hover:text-main border border-white/10">
+          Full-Stack Web (Edunet)
+        </button>
+        <button data-filter="ai" class="cert-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white/5 hover:bg-white/10 text-muted hover:text-main border border-white/10">
+          Artificial Intelligence (IBM)
+        </button>
+        <button data-filter="labs" class="cert-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white/5 hover:bg-white/10 text-muted hover:text-main border border-white/10">
+          Practical Labs (IBM)
+        </button>
+      </div>
+
+      <!-- Certificates Grid Container (Rendered dynamically via app.js) -->
+      <div id="certificates-grid" class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EDUCATION & TIMELINE SECTION
+         ============================================================ -->
+    <section id="education" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-400/10 border border-brand-400/20 text-xs font-mono text-brand-400 uppercase tracking-widest">
+          <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+          <span>Academic Milestones</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          Education &amp; <span class="gradient-text">Journey</span>
+        </h2>
+        <p class="text-muted text-sm sm:text-base">
+          My academic foundation, coursework, performance metrics, and ongoing engineering path.
+        </p>
+      </div>
+
+      <!-- Education Timeline -->
+      <div class="mt-12 max-w-4xl mx-auto space-y-8 relative before:absolute before:inset-0 before:left-4 sm:before:left-1/2 before:w-0.5 before:-translate-x-1/2 before:bg-gradient-to-b before:from-brand-500 before:via-accent-purple before:to-transparent">
+        
+        <!-- Timeline Item 1: B.Tech -->
+        <div class="relative flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
+          <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#0b0f17] border-2 border-brand-400 flex items-center justify-center shadow-lg shadow-brand-500/30 z-10">
+            <i data-lucide="graduation-cap" class="w-4 h-4 text-brand-400"></i>
+          </div>
+
+          <div class="w-full sm:w-1/2 pl-12 sm:pl-0 sm:pr-8 text-left sm:text-right">
+            <div class="glass-card p-6 rounded-2xl hover:border-brand-400/40 transition-all space-y-2">
+              <div class="flex items-center sm:justify-end gap-2">
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-brand-400/10 text-brand-400 border border-brand-400/20">
+                  2025 &mdash; 2029
+                </span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/20 text-emerald-300">
+                  Current Degree
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-main">Bachelor of Technology (B.Tech)</h3>
+              <p class="text-sm font-semibold text-brand-400">GL Bajaj Institute of Technology and Management</p>
+              <div class="inline-block p-1.5 px-3 rounded-lg bg-white/5 border border-white/10 font-mono text-xs font-bold text-accent-cyan">
+                1st Year Overall YGPA: 7.00 / 10.0
+              </div>
+              <p class="text-xs text-muted leading-relaxed pt-2">
+                Solidified foundations in engineering mathematics, digital systems, C/C++ programming principles, and laboratory experiments. Actively participating in peer coding cohorts.
+              </p>
+            </div>
+          </div>
+          <div class="hidden sm:block sm:w-1/2"></div>
+        </div>
+
+        <!-- Timeline Item 2: Class XII -->
+        <div class="relative flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
+          <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#0b0f17] border-2 border-accent-purple flex items-center justify-center shadow-lg shadow-accent-purple/30 z-10">
+            <i data-lucide="award" class="w-4 h-4 text-accent-purple"></i>
+          </div>
+
+          <div class="hidden sm:block sm:w-1/2"></div>
+          <div class="w-full sm:w-1/2 pl-12 sm:pl-8 sm:pr-0 text-left">
+            <div class="glass-card p-6 rounded-2xl hover:border-accent-purple/40 transition-all space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-accent-purple/10 text-purple-300 border border-accent-purple/20">
+                  Completed 2024
+                </span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-blue-500/20 text-blue-300">
+                  Science Stream
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-main">Higher Secondary Certificate (Class XII)</h3>
+              <p class="text-sm font-semibold text-purple-300">Physics, Chemistry &amp; Mathematics (PCM)</p>
+              <div class="inline-block p-1.5 px-3 rounded-lg bg-white/5 border border-white/10 font-mono text-xs font-bold text-purple-300">
+                Final Board Score: 73.20%
+              </div>
+              <p class="text-xs text-muted leading-relaxed pt-2">
+                Intensive analytical coursework in algebra, calculus, physics, and laboratory methodology that nurtured disciplined problem-solving frameworks.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 3: Class X -->
+        <div class="relative flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
+          <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#0b0f17] border-2 border-emerald-400 flex items-center justify-center shadow-lg shadow-emerald-400/30 z-10">
+            <i data-lucide="book-marked" class="w-4 h-4 text-emerald-400"></i>
+          </div>
+
+          <div class="w-full sm:w-1/2 pl-12 sm:pl-0 sm:pr-8 text-left sm:text-right">
+            <div class="glass-card p-6 rounded-2xl hover:border-emerald-400/40 transition-all space-y-2">
+              <div class="flex items-center sm:justify-end gap-2">
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-emerald-400/10 text-emerald-400 border border-emerald-400/20">
+                  Completed 2022
+                </span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/20 text-emerald-300">
+                  Distinction
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-main">Secondary School Examination (Class X)</h3>
+              <p class="text-sm font-semibold text-emerald-400">All Core Subjects &amp; Sciences</p>
+              <div class="inline-block p-1.5 px-3 rounded-lg bg-white/5 border border-white/10 font-mono text-xs font-bold text-emerald-400">
+                Final Board Score: 84.34%
+              </div>
+              <p class="text-xs text-muted leading-relaxed pt-2">
+                Graduated with distinction with 84.34%, developing strong foundational aptitude in mathematics, sciences, and an early enthusiasm for computing.
+              </p>
+            </div>
+          </div>
+          <div class="hidden sm:block sm:w-1/2"></div>
+        </div>
+
+        <!-- Timeline Item 4: Career Objective / Fresher Status -->
+        <div class="relative flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
+          <div class="absolute left-4 sm:left-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-[#0b0f17] border-2 border-sky-400 flex items-center justify-center shadow-lg shadow-sky-400/30 z-10">
+            <i data-lucide="briefcase" class="w-4 h-4 text-sky-400"></i>
+          </div>
+
+          <div class="hidden sm:block sm:w-1/2"></div>
+          <div class="w-full sm:w-1/2 pl-12 sm:pl-8 sm:pr-0 text-left">
+            <div class="glass-card p-6 rounded-2xl border border-sky-400/30 bg-sky-950/10 space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-sky-400/10 text-sky-300 border border-sky-400/20">
+                  Status: Fresher
+                </span>
+                <span class="w-2 h-2 rounded-full bg-emerald-400 status-beacon"></span>
+              </div>
+              <h3 class="text-lg font-bold text-main">Open to Opportunities</h3>
+              <p class="text-sm text-sky-300 font-medium">Software Engineering &amp; Web Development Internships</p>
+              <p class="text-xs text-muted leading-relaxed pt-2">
+                Prepared with core programming fundamentals, practical projects, and a strong learning velocity. Eager to take on challenging responsibilities under experienced mentors.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT SECTION
+         ============================================================ -->
+    <section id="contact" class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-400/10 border border-brand-400/20 text-xs font-mono text-brand-400 uppercase tracking-widest">
+          <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+          <span>Get in Touch</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          Let’s Build Something <span class="gradient-text">Great Together</span>
+        </h2>
+        <p class="text-muted text-sm sm:text-base">
+          Whether you have an internship opportunity, a project idea, or just want to connect with an enthusiastic upcoming developer, I'd love to hear from you!
+        </p>
+      </div>
+
+      <!-- Contact Main Grid -->
+      <div class="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Contact Information Cards (Left - 5 Cols) -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <!-- Direct Email Card -->
+          <div class="glass-card p-6 rounded-2xl space-y-3 group hover:border-brand-400/40 transition-all">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-xl bg-brand-400/10 border border-brand-400/20 flex items-center justify-center text-brand-400">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <button id="copy-email-card-btn" class="text-xs font-mono px-2.5 py-1 rounded bg-white/5 hover:bg-white/10 text-muted hover:text-brand-400 border border-white/10 transition-colors flex items-center gap-1.5 cursor-pointer">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                <span>Copy</span>
+              </button>
+            </div>
+            <div>
+              <span class="text-xs font-mono text-muted uppercase tracking-wider">Direct Email</span>
+              <a href="mailto:rriteshsingh1601@gmail.com" class="block text-base sm:text-lg font-bold text-main hover:text-brand-400 transition-colors mt-0.5">
+                rriteshsingh1601@gmail.com
+              </a>
+            </div>
+            <p class="text-xs text-muted">
+              Replies usually within 24 hours. Feel free to send interview inquiries or technical queries.
+            </p>
+          </div>
+
+          <!-- LinkedIn Card -->
+          <a href="https://www.linkedin.com/in/ritesh-singh-396528345?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="glass-card p-6 rounded-2xl block space-y-3 group hover:border-[#0077b5]/50 transition-all">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-xl bg-[#0077b5]/10 border border-[#0077b5]/20 flex items-center justify-center text-[#0077b5]">
+                <i data-lucide="linkedin" class="w-5 h-5"></i>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-muted group-hover:text-main group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+            </div>
+            <div>
+              <span class="text-xs font-mono text-muted uppercase tracking-wider">Professional Network</span>
+              <span class="block text-base sm:text-lg font-bold text-main group-hover:text-[#0077b5] transition-colors mt-0.5">
+                LinkedIn Profile
+              </span>
+            </div>
+            <p class="text-xs text-muted">
+              Connect with me on LinkedIn to follow my ongoing academic milestones and engineering progress.
+            </p>
+          </a>
+
+          <!-- GitHub Card -->
+          <a href="https://github.com/ritesh-203" target="_blank" rel="noopener noreferrer" class="glass-card p-6 rounded-2xl block space-y-3 group hover:border-purple-400/50 transition-all">
+            <div class="flex items-center justify-between">
+              <div class="w-10 h-10 rounded-xl bg-purple-400/10 border border-purple-400/20 flex items-center justify-center text-purple-400">
+                <i data-lucide="github" class="w-5 h-5"></i>
+              </div>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 text-muted group-hover:text-main group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+            </div>
+            <div>
+              <span class="text-xs font-mono text-muted uppercase tracking-wider">Source Code &amp; Repos</span>
+              <span class="block text-base sm:text-lg font-bold text-main group-hover:text-purple-400 transition-colors mt-0.5">
+                github.com/ritesh-203
+              </span>
+            </div>
+            <p class="text-xs text-muted">
+              Explore my public repositories, coding experiments, and commit logs.
+            </p>
+          </a>
+
+          <!-- Location & Availability Badge -->
+          <div class="p-4 rounded-xl bg-white/5 border border-white/5 flex items-center gap-3">
+            <div class="p-2.5 rounded-lg bg-emerald-400/10 text-emerald-400">
+              <i data-lucide="map-pin" class="w-4 h-4"></i>
+            </div>
+            <div class="text-xs">
+              <div class="font-semibold text-main">Greater Noida / Delhi NCR, India</div>
+              <div class="text-muted mt-0.5">Available for On-site &amp; Remote roles across India</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive Contact Form (Right - 7 Cols) -->
+        <div class="lg:col-span-7">
+          <div class="glass-card p-6 sm:p-8 rounded-2xl border border-white/10 space-y-6">
+            <div>
+              <h3 class="text-xl font-bold text-main">Send a Direct Message</h3>
+              <p class="text-xs sm:text-sm text-muted mt-1">
+                Fill out the form below to shoot an email directly to my inbox.
+              </p>
+            </div>
+
+            <form id="contact-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                  <label for="contact-name" class="block text-xs font-mono text-muted uppercase">Your Name <span class="text-rose-400">*</span></label>
+                  <input 
+                    type="text" 
+                    id="contact-name" 
+                    required 
+                    placeholder="e.g. John Doe / Tech Recruiter"
+                    class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-main placeholder:text-muted/60 text-sm focus:outline-none focus:border-brand-400 focus:ring-1 focus:ring-brand-400 transition-all"
+                  />
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="contact-email" class="block text-xs font-mono text-muted uppercase">Your Email <span class="text-rose-400">*</span></label>
+                  <input 
+                    type="email" 
+                    id="contact-email" 
+                    required 
+                    placeholder="e.g. john@company.com"
+                    class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-main placeholder:text-muted/60 text-sm focus:outline-none focus:border-brand-400 focus:ring-1 focus:ring-brand-400 transition-all"
+                  />
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="contact-subject" class="block text-xs font-mono text-muted uppercase">Subject <span class="text-rose-400">*</span></label>
+                <input 
+                  type="text" 
+                  id="contact-subject" 
+                  required 
+                  placeholder="e.g. Internship Opportunity / Collaboration Proposal"
+                  class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-main placeholder:text-muted/60 text-sm focus:outline-none focus:border-brand-400 focus:ring-1 focus:ring-brand-400 transition-all"
+                />
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="contact-message" class="block text-xs font-mono text-muted uppercase">Message <span class="text-rose-400">*</span></label>
+                <textarea 
+                  id="contact-message" 
+                  rows="5" 
+                  required 
+                  placeholder="Hi Ritesh, I reviewed your portfolio and would like to talk about..."
+                  class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-main placeholder:text-muted/60 text-sm focus:outline-none focus:border-brand-400 focus:ring-1 focus:ring-brand-400 transition-all resize-none"
+                ></textarea>
+              </div>
+
+              <div class="flex flex-col sm:flex-row items-center gap-3 pt-2">
+                <button 
+                  type="submit" 
+                  id="contact-submit-btn" 
+                  class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-brand-600 via-brand-500 to-accent-purple text-white shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer"
+                >
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                  <span>Send Message</span>
+                </button>
+
+                <a 
+                  id="mailto-fallback-btn" 
+                  href="mailto:rriteshsingh1601@gmail.com?subject=Hello%20Ritesh&body=Hi%20Ritesh,"
+                  class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs font-mono bg-white/5 hover:bg-white/10 border border-white/10 text-muted hover:text-main transition-all"
+                >
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                  <span>Open in Mail App</span>
+                </a>
+              </div>
+
+              <p class="text-[11px] text-muted font-mono pt-1">
+                🔒 Privacy guaranteed. Your contact details will only be used to respond to your inquiry.
+              </p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="mt-28 border-t border-white/10 bg-base/80 glass-panel relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+      
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <div class="space-y-2">
+          <div class="flex items-center justify-center md:justify-start gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-brand-600 to-accent-purple flex items-center justify-center text-white font-mono font-bold text-xs">
+              RS
+            </div>
+            <span class="font-bold text-base tracking-tight">Ritesh Singh</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-white/5 text-muted border border-white/10">B.Tech Developer</span>
+          </div>
+          <p class="text-xs text-muted max-w-md">
+            Crafting responsive, user-friendly, and modern digital experiences. Ready for new opportunities and engineering challenges.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-muted">
+          <a href="#about" class="hover:text-brand-400 transition-colors">About</a>
+          <a href="#skills" class="hover:text-brand-400 transition-colors">Skills</a>
+          <a href="#certificates" class="hover:text-brand-400 transition-colors">Certificates</a>
+          <a href="#education" class="hover:text-brand-400 transition-colors">Education</a>
+          <a href="#contact" class="hover:text-brand-400 transition-colors">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/ritesh-203" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-muted hover:text-brand-400 transition-colors" title="GitHub">
+            <i data-lucide="github" class="w-4 h-4"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/ritesh-singh-396528345?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-muted hover:text-brand-400 transition-colors" title="LinkedIn">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+          <a href="mailto:rriteshsingh1601@gmail.com" class="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-muted hover:text-brand-400 transition-colors" title="Email">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+          </a>
+          <a href="#hero" class="p-2.5 rounded-xl bg-brand-500/10 hover:bg-brand-500/20 border border-brand-500/20 text-brand-400 transition-all hover:-translate-y-1" title="Back to top">
+            <i data-lucide="arrow-up" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-dim font-mono">
+        <div>
+          © 2026 Ritesh Singh. All rights reserved. Built with Semantic HTML5, Tailwind CSS &amp; Lucide Icons.
+        </div>
+        <div class="flex items-center gap-2">
+          <span>GL Bajaj Institute of Technology &amp; Management</span>
+          <span>•</span>
+          <span class="text-emerald-400">Status: Active</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       PROJECT / CERTIFICATE DETAILS MODAL
+       ============================================================ -->
+  <div id="project-modal" class="fixed inset-0 z-50 modal-overlay hidden flex items-center justify-center p-4">
+    <div class="glass-card bg-surface w-full max-w-3xl max-h-[90vh] rounded-2xl overflow-y-auto border border-white/15 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+      
+      <button id="modal-close-btn" class="absolute top-4 right-4 z-20 p-2 rounded-xl bg-black/40 hover:bg-black/60 text-muted hover:text-white border border-white/10 transition-all cursor-pointer">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div id="modal-content" class="p-6 sm:p-8 space-y-6">
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       COMMAND PALETTE MODAL (Ctrl + K)
+       ============================================================ -->
+  <div id="cmd-palette-modal" class="fixed inset-0 z-50 modal-overlay hidden flex items-start justify-center pt-20 px-4">
+    <div class="glass-card bg-surface w-full max-w-xl rounded-2xl border border-white/20 shadow-2xl overflow-hidden animate-in fade-in duration-150">
+      
+      <div class="p-4 border-b border-white/10 flex items-center gap-3">
+        <i data-lucide="search" class="w-5 h-5 text-brand-400"></i>
+        <input 
+          type="text" 
+          id="cmd-input" 
+          placeholder="Type a section or command (e.g., certificates, skills, email, github)..."
+          class="w-full bg-transparent text-sm text-main placeholder:text-muted focus:outline-none font-sans"
+          autocomplete="off"
+        />
+        <kbd class="px-2 py-0.5 text-[10px] font-mono bg-white/10 text-muted rounded">ESC</kbd>
+      </div>
+
+      <div id="cmd-results" class="max-h-72 overflow-y-auto p-2 space-y-1 text-sm font-sans">
+        <a href="#about" class="cmd-item flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/5 text-muted hover:text-main cursor-pointer">
+          <div class="flex items-center gap-2.5">
+            <i data-lucide="user" class="w-4 h-4 text-brand-400"></i>
+            <span>Jump to About Me</span>
+          </div>
+          <span class="text-[10px] font-mono text-dim">#about</span>
+        </a>
+        <a href="#skills" class="cmd-item flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/5 text-muted hover:text-main cursor-pointer">
+          <div class="flex items-center gap-2.5">
+            <i data-lucide="layers" class="w-4 h-4 text-accent-purple"></i>
+            <span>Jump to Skills &amp; Tech Stack</span>
+          </div>
+          <span class="text-[10px] font-mono text-dim">#skills</span>
+        </a>
+        <a href="#certificates" class="cmd-item flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/5 text-muted hover:text-main cursor-pointer">
+          <div class="flex items-center gap-2.5">
+            <i data-lucide="award" class="w-4 h-4 text-emerald-400"></i>
+            <span>Jump to Certificates &amp; Credentials</span>
+          </div>
+          <span class="text-[10px] font-mono text-dim">#certificates</span>
+        </a>
+        <a href="#education" class="cmd-item flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/5 text-muted hover:text-main cursor-pointer">
+          <div class="flex items-center gap-2.5">
+            <i data-lucide="graduation-cap" class="w-4 h-4 text-amber-400"></i>
+            <span>Jump to Education &amp; Timeline</span>
+          </div>
+          <span class="text-[10px] font-mono text-dim">#education</span>
+        </a>
+        <a href="#contact" class="cmd-item flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/5 text-muted hover:text-main cursor-pointer">
+          <div class="flex items-center gap-2.5">
+            <i data-lucide="mail" class="w-4 h-4 text-rose-400"></i>
+            <span>Jump to Contact Form</span>
+          </div>
+          <span class="text-[10px] font-mono text-dim">#contact</span>
+        </a>
+
+        <button id="cmd-copy-email" class="w-full cmd-item flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/5 text-muted hover:text-main cursor-pointer text-left">
+          <div class="flex items-center gap-2.5">
+            <i data-lucide="copy" class="w-4 h-4 text-sky-400"></i>
+            <span>Copy Email (rriteshsingh1601@gmail.com)</span>
+          </div>
+          <span class="text-[10px] font-mono text-dim">Action</span>
+        </button>
+
+        <a href="https://github.com/ritesh-203" target="_blank" rel="noopener noreferrer" class="cmd-item flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/5 text-muted hover:text-main cursor-pointer">
+          <div class="flex items-center gap-2.5">
+            <i data-lucide="github" class="w-4 h-4 text-purple-400"></i>
+            <span>Open GitHub (ritesh-203)</span>
+          </div>
+          <span class="text-[10px] font-mono text-dim">External</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/ritesh-singh-396528345" target="_blank" rel="noopener noreferrer" class="cmd-item flex items-center justify-between px-3 py-2 rounded-xl hover:bg-white/5 text-muted hover:text-main cursor-pointer">
+          <div class="flex items-center gap-2.5">
+            <i data-lucide="linkedin" class="w-4 h-4 text-[#0077b5]"></i>
+            <span>Open LinkedIn Profile</span>
+          </div>
+          <span class="text-[10px] font-mono text-dim">External</span>
+        </a>
+      </div>
+
+      <div class="p-3 bg-black/40 border-t border-white/5 flex items-center justify-between text-[11px] font-mono text-dim">
+        <span>Press <kbd class="px-1.5 py-0.5 rounded bg-white/10 text-main">ESC</kbd> to exit</span>
+        <span>Ritesh Singh • Portfolio</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- Application Scripts -->
+  <script src="js/projects-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

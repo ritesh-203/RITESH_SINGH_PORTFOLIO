@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#0b0f17" />
+    </linearGradient>
+    <linearGradient id="glowRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    <linearGradient id="codeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f6d5b0" />
+      <stop offset="100%" stop-color="#e3b487" />
+    </linearGradient>
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f2937" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="hoodieGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Circular Base -->
+  <circle cx="200" cy="200" r="190" fill="url(#bgGradient)" />
+  <circle cx="200" cy="200" r="185" fill="none" stroke="url(#glowRing)" stroke-width="4" stroke-dasharray="6 8" opacity="0.6" />
+  <circle cx="200" cy="200" r="176" fill="none" stroke="url(#glowRing)" stroke-width="2" />
+
+  <!-- Code Particle Accents in Background -->
+  <text x="50" y="90" font-family="'JetBrains Mono', monospace" font-size="16" fill="#38bdf8" opacity="0.4">&lt;dev&gt;</text>
+  <text x="310" y="110" font-family="'JetBrains Mono', monospace" font-size="16" fill="#c084fc" opacity="0.4">{ C++ }</text>
+  <text x="45" y="300" font-family="'JetBrains Mono', monospace" font-size="15" fill="#818cf8" opacity="0.4">#DSA</text>
+  <text x="300" y="310" font-family="'JetBrains Mono', monospace" font-size="15" fill="#38bdf8" opacity="0.4">&lt;/code&gt;</text>
+
+  <!-- Silhouette & Character -->
+  <g id="character">
+    <!-- Hoodie Shoulders -->
+    <path d="M110 370 C110 290 140 260 200 260 C260 260 290 290 290 370 Z" fill="url(#hoodieGrad)" />
+    <!-- Inner Shirt / Collar -->
+    <path d="M175 260 L200 295 L225 260 Z" fill="#0f172a" />
+    <path d="M185 260 L200 282 L215 260 Z" fill="#38bdf8" opacity="0.8" />
+
+    <!-- Neck -->
+    <rect x="182" y="215" width="36" height="50" rx="8" fill="url(#skinGrad)" />
+
+    <!-- Head -->
+    <ellipse cx="200" cy="180" rx="55" ry="65" fill="url(#skinGrad)" />
+
+    <!-- Ears -->
+    <circle cx="145" cy="182" r="12" fill="url(#skinGrad)" />
+    <circle cx="255" cy="182" r="12" fill="url(#skinGrad)" />
+
+    <!-- Modern Hair Style -->
+    <path d="M142 165 C140 120 165 95 200 95 C235 95 260 120 258 165 C250 150 235 145 220 148 C195 152 175 140 142 165 Z" fill="url(#hairGrad)" />
+    <path d="M150 135 C170 105 230 105 250 135 C240 115 210 110 180 118 Z" fill="#374151" />
+
+    <!-- Eyebrows -->
+    <path d="M165 160 Q178 155 190 160" stroke="#1f2937" stroke-width="3" stroke-linecap="round" fill="none" />
+    <path d="M210 160 Q222 155 235 160" stroke="#1f2937" stroke-width="3" stroke-linecap="round" fill="none" />
+
+    <!-- Eyes (focused, warm, determined) -->
+    <ellipse cx="178" cy="172" rx="4.5" ry="5.5" fill="#1e293b" />
+    <circle cx="180" cy="170" r="1.5" fill="#ffffff" />
+    <ellipse cx="222" cy="172" rx="4.5" ry="5.5" fill="#1e293b" />
+    <circle cx="224" cy="170" r="1.5" fill="#ffffff" />
+
+    <!-- Stylish Modern Glasses (Developer Tech Look) -->
+    <rect x="160" y="160" width="35" height="24" rx="7" fill="none" stroke="#38bdf8" stroke-width="3" filter="url(#softGlow)" />
+    <rect x="205" y="160" width="35" height="24" rx="7" fill="none" stroke="#38bdf8" stroke-width="3" filter="url(#softGlow)" />
+    <line x1="195" y1="172" x2="205" y2="172" stroke="#38bdf8" stroke-width="3" />
+    <!-- Glasses Temples -->
+    <line x1="160" y1="170" x2="145" y2="168" stroke="#38bdf8" stroke-width="2.5" />
+    <line x1="240" y1="170" x2="255" y2="168" stroke="#38bdf8" stroke-width="2.5" />
+
+    <!-- Nose -->
+    <path d="M200 178 L197 192 L203 192" stroke="#d49a6a" stroke-width="2.5" stroke-linecap="round" fill="none" />
+
+    <!-- Smile / Friendly Expression -->
+    <path d="M188 208 Q200 218 212 208" stroke="#be123c" stroke-width="3" stroke-linecap="round" fill="none" />
+
+    <!-- Laptop Mockup at Bottom -->
+    <g transform="translate(110, 315)">
+      <!-- Screen Lid -->
+      <path d="M15 0 L165 0 C170 0 175 4 175 10 L160 55 L20 55 L5 10 C5 4 10 0 15 0 Z" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5" />
+      <rect x="22" y="8" width="136" height="40" rx="3" fill="#020617" />
+      <text x="30" y="24" font-family="'JetBrains Mono', monospace" font-size="9" fill="#38bdf8">&gt; ritesh.init()</text>
+      <text x="30" y="38" font-family="'JetBrains Mono', monospace" font-size="8" fill="#4ade80">● Status: Ready to code</text>
+      <!-- Base keyboard -->
+      <polygon points="0,55 180,55 195,68 -15,68" fill="#1e293b" stroke="#475569" stroke-width="1" />
+      <rect x="75" y="58" width="30" height="4" rx="2" fill="#64748b" />
+    </g>
+  </g>
+
+  <!-- Glowing Status Badge "B.Tech Fresher" -->
+  <g transform="translate(135, 360)">
+    <rect width="130" height="28" rx="14" fill="#030712" stroke="#38bdf8" stroke-width="1.5" filter="url(#softGlow)" />
+    <circle cx="16" cy="14" r="4.5" fill="#22c55e" />
+    <text x="27" y="18" font-family="'Inter', system-ui, sans-serif" font-weight="600" font-size="11" fill="#f8fafc">B.Tech Dev</text>
+  </g>
+</svg>
